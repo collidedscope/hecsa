@@ -33,7 +33,7 @@ module Hecsa
 
       return if offset.zero?
 
-      progress ["D", "D2", "D'"][offset - 1].not_nil!
+      progress %w[D D2 D'][offset - 1].not_nil!
     end
 
     def try_cross
