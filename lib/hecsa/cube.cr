@@ -26,26 +26,24 @@ module Hecsa
       z: "HhEeFfGg2XxUuVvWw6LlIiJjKk3DdAaBbCc1RrSsTtQq5PpMmNnOo4",
     }
 
+    property relative : RelativeCube?
+
     def initialize
       @state = SOLVED
-      @rotations = [] of String
+      @relative = RelativeCube.new
     end
 
     def resolve(locations)
       locations.chars.map { |c| @state[SOLVED.index(c).not_nil!] }.join
     end
 
-    def unsolve(locations)
-      locations.chars.map { |c| SOLVED[@state.index(c).not_nil!] }.join
-    end
-
-    def resolve_relative(spec)
-      Cube.new.exec(@rotations.join " ").unsolve resolve spec
+    def resolve_relative(locations)
+      @relative.not_nil!.unsolve resolve locations
     end
 
     def exec1(move)
-      @rotations << move if "xyz"[move[0]]?
-      @rotations << "y'" if move == "E" # TODO: generalize
+      @relative.not_nil!.exec move if "xyz"[move[0]]?
+      @relative.not_nil!.exec "y'" if move == "E" # TODO: generalize
       @state = resolve MOVES[move]
     end
 
@@ -56,6 +54,20 @@ module Hecsa
         .split &->exec1(String)
 
       self
+    end
+  end
+
+  class RelativeCube < Cube
+    def initialize
+      @state = SOLVED
+    end
+
+    def unsolve(locations)
+      locations.chars.map { |c| SOLVED[@state.index(c).not_nil!] }.join
+    end
+
+    def exec1(move)
+      @state = resolve MOVES[move]
     end
   end
 end
