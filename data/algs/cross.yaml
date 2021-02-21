@@ -1,0 +1,112 @@
+a:
+  u: U2 F2
+  v: U R2
+  w: B2
+  x: U' L2
+b:
+  u: U F2
+  v: R2
+  w: U' B2
+  x: U2 L2
+c:
+  u: F2
+  v: U' R2
+  w: U2 B2
+  x: U L2
+d:
+  u: U' F2
+  v: U2 R2
+  w: U B2
+  x: L2
+e:
+  u: L F' L'
+  v: U B' R B # setup to q
+  w: L' B L
+  x: U B L' B' # setup to q
+f:
+  u: F'
+  v: E R'
+  w: E2 B'
+  x: E' L'
+g:
+  u: L' F'
+  v: L' E R'
+  w: L B
+h:
+  u: E2 F
+  v: E' R
+  w: B
+  x: E L
+i:
+  u: U L F' L' # setup to e
+  v: F R F'
+  w: U L' B L # setup to e
+  x: F' L F
+j:
+  u: E' F'
+  v: R'
+  w: E B'
+  x: E2 L'
+k:
+  v: F' R'
+  w: F E' B
+  x: F L
+l:
+  u: E F
+  v: E2 R
+  w: E' B
+  x: L
+m:
+  u: R' F R
+  v: U' B' R B # setup to q
+  w: R B' R'
+  x: U' B L' B' # setup to q
+n:
+  u: E2 F'
+  v: E' R'
+  w: B'
+  x: E L'
+o:
+  u: R F
+  w: R' B'
+  x: R E' L
+p:
+  u: F
+  v: E R
+  w: E2 B
+  x: E' L
+q:
+  u: U' L F' L' # setup to e
+  v: B' R B
+  w: U' L' B L # setup to e
+  x: B L' B'
+r:
+  u: E F'
+  v: E2 R'
+  w: E' B'
+  x: L'
+s:
+  u: B E F'
+  v: B R
+  x: B' L'
+t:
+  u: E' F
+  v: R
+  w: E B
+  x: E2 L
+u:
+  v: D
+  w: D2
+  x: D'
+v:
+  u: D'
+  w: D
+  x: D2
+w:
+  u: D2
+  v: D'
+  x: D
+x:
+  u: D
+  v: D2
+  w: D'

@@ -1,0 +1,16 @@
+Dt:
+  Xr: R' U R U L U2 L' U L U' L'
+Jr:
+  Xr: U L U' L' U2 L U' L'
+An:
+  Wt: U R' U R R2 F R F' R
+Jc:
+  Wt: R' U R U' R' U' R
+Ll:
+  Ul: L' U' L U L' U2 L U L' U' L
+Db:
+  Wt: R' U' R U' R' U R
+Ir:
+  Xr: L U2 L' U L U L'
+Vd:
+  Wt: R U R' U2 R' U' R
