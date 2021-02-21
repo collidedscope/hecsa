@@ -26,7 +26,7 @@ module Hecsa
       z: "HhEeFfGg2XxUuVvWw6LlIiJjKk3DdAaBbCc1RrSsTtQq5PpMmNnOo4",
     }
 
-    property relative : RelativeCube?
+    property! relative : RelativeCube
 
     def initialize
       @state = SOLVED
@@ -38,12 +38,12 @@ module Hecsa
     end
 
     def resolve_relative(locations)
-      @relative.not_nil!.unsolve resolve locations
+      relative.unsolve resolve locations
     end
 
     def exec1(move)
-      @relative.not_nil!.exec move if "xyz"[move[0]]?
-      @relative.not_nil!.exec "y'" if move == "E" # TODO: generalize
+      relative.exec move if "xyz"[move[0]]?
+      relative.exec "y'" if move == "E" # TODO: generalize
       @state = resolve MOVES[move]
     end
 
