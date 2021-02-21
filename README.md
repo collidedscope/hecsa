@@ -1,3 +1,3 @@
-# Hecsa
+# HECSA
 
-**Hecsa** is a human-enumerated cube-solving algorithm.
+**HECSA** is a human-enumerated cube-solving algorithm.
