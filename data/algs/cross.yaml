@@ -32,6 +32,7 @@ g:
   u: L' F'
   v: L' E R'
   w: L B
+  x: L' E' L'
 h:
   u: E2 F
   v: E' R
@@ -48,6 +49,7 @@ j:
   w: E B'
   x: E2 L'
 k:
+  u: F E F
   v: F' R'
   w: F E' B
   x: F L
@@ -68,6 +70,7 @@ n:
   x: E L'
 o:
   u: R F
+  v: R E R
   w: R' B'
   x: R E' L
 p:
@@ -88,6 +91,7 @@ r:
 s:
   u: B E F'
   v: B R
+  w: B E B
   x: B' L'
 t:
   u: E' F
