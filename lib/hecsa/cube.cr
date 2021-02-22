@@ -26,6 +26,14 @@ module Hecsa
       z: "HhEeFfGg2XxUuVvWw6LlIiJjKk3DdAaBbCc1RrSsTtQq5PpMmNnOo4",
     }
 
+    # moves which affect the orientation of the cube
+    ORIENTAL = {
+      x: "x", y: "y", z: "z",
+      E: "y'", M: "x'", S: "z",
+      u: "y", l: "x", f: "z",
+      r: "x'", b: "z'", d: "y'",
+    }
+
     property! relative : RelativeCube
 
     def initialize
@@ -46,9 +54,10 @@ module Hecsa
     end
 
     def exec1(move)
-      relative.exec move if "xyz"[move[0]]?
-      relative.exec "y'" if move == "E" # TODO: generalize
       @state = resolve MOVES[move]
+      if rotation = ORIENTAL[move]?
+        relative.exec rotation
+      end
     end
 
     def exec(moves)
