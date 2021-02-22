@@ -99,18 +99,18 @@ t:
   w: E B
   x: E2 L
 u:
-  v: D
-  w: D2
-  x: D'
+  v: F E R'
+  w: M' U2 M'
+  x: F' E' L
 v:
-  u: D'
-  w: D
-  x: D2
+  u: R E' F'
+  w: R2 U' B2
+  x: R2 S2
 w:
-  u: D2
-  v: D'
-  x: D
+  u: M U2 M
+  v: B2 U R2
+  x: B E L'
 x:
-  u: D
-  v: D2
-  w: D'
+  u: L' E F
+  v: S2 R2
+  w: L E' B'
