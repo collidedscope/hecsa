@@ -33,8 +33,12 @@ module Hecsa
       @relative = RelativeCube.new
     end
 
-    def resolve(locations)
-      locations.chars.map { |c| @state[SOLVED.index(c).not_nil!] }.join
+    def resolve(location : Char)
+      @state[SOLVED.index(location).not_nil!]
+    end
+
+    def resolve(locations : String)
+      locations.chars.map(&->resolve(Char)).join
     end
 
     def resolve_relative(locations)
@@ -62,8 +66,12 @@ module Hecsa
       @state = SOLVED
     end
 
-    def unsolve(locations)
-      locations.chars.map { |c| SOLVED[@state.index(c).not_nil!] }.join
+    def unsolve(location : Char)
+      SOLVED[@state.index(location).not_nil!]
+    end
+
+    def unsolve(locations : String)
+      locations.chars.map(&->unsolve(Char)).join
     end
 
     def exec1(move)
