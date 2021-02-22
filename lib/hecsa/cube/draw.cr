@@ -3,7 +3,7 @@ class Hecsa::Cube
   UFR    = "AaBbCcDd1IiJjKkLl3MmNnOoPp4"
   COLORS = [255, 208, 40, 196, 21, 226]
 
-  def draw
+  def draw(io = STDOUT)
     map = {" " => " "}
 
     UFR.each_char do |c|
@@ -11,6 +11,6 @@ class Hecsa::Cube
       map[c.to_s] = "\e[48;5;#{color}m \e[0m"
     end
 
-    puts ART.gsub /./, map
+    io.puts ART.gsub /./, map
   end
 end
