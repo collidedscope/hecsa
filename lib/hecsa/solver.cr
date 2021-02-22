@@ -1,3 +1,4 @@
+require "colorize"
 require "hecsa/cube"
 require "hecsa/cube/cfop"
 require "hecsa/cube/draw"
@@ -15,6 +16,8 @@ module Hecsa
       @cube = Cube.new.exec scramble
       @solution = [] of String
       @misalignment = 0
+
+      Solver.log "Scramble: #{scramble}"
     end
 
     def progress(moves)
@@ -24,7 +27,12 @@ module Hecsa
 
     def cfop
       cross
+      Solver.log "solved cross", :success
+      @cube.draw
+
       f2l
+      Solver.log "solved F2L", :success
+      @cube.draw
     end
 
     def cross
@@ -87,6 +95,7 @@ module Hecsa
     def try_f2l
       Hecsa.f2l_knowledge.each do |from, (to, solution)|
         next unless to == @cube.resolve_relative from
+        Solver.log "solving #{from} into #{to} (#{solution})"
         return progress solution
       end
 
@@ -96,6 +105,17 @@ module Hecsa
     def show
       p @solution
       @cube.draw
+    end
+
+    def self.log(msg, kind = nil, io = STDERR)
+      io.puts case kind
+      when :success
+        msg.colorize :green
+      when :error
+        msg.colorize :red
+      else
+        msg
+      end
     end
   end
 end
