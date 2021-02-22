@@ -28,10 +28,8 @@ module Hecsa
 
     # moves which affect the orientation of the cube
     ORIENTAL = {
-      x: "x", y: "y", z: "z",
-      E: "y'", M: "x'", S: "z",
-      u: "y", l: "x", f: "z",
-      r: "x'", b: "z'", d: "y'",
+      x: "x", y: "y", z: "z", E: "y'", M: "x'", S: "z",
+      u: "y", l: "x", f: "z", r: "x'", b: "z'", d: "y'",
     }
 
     property! relative : RelativeCube
