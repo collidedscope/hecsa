@@ -5,15 +5,16 @@ require "hecsa/cube/draw"
 module Hecsa
   class Solver
     property cube : Cube
-    property :solution
+    getter solution
 
-    EDGES = ("a".."x")
+    EDGES = 'a'..'x'
     SLOTS = {"Ul" => "L' U' L", "Vj" => "R U R'",
              "Wt" => "R' U R", "Xr" => "L U' L'"}
 
     def initialize(scramble)
       @cube = Cube.new.exec scramble
       @solution = [] of String
+      @misalignment = 0
     end
 
     def progress(moves)
@@ -27,6 +28,8 @@ module Hecsa
     end
 
     def cross
+      @misalignment = inspect
+
       until offset = @cube.cross_solved?
         try_cross
       end
@@ -36,26 +39,36 @@ module Hecsa
       progress %w[D D2 D'][offset - 1].not_nil!
     end
 
+    def misalign(edge)
+      'u' + (edge - 'u' + @misalignment) % 4
+    end
+
+    def inspect
+      cross_pieces = @cube.resolve_relative "uvwx"
+      solved = cross_pieces.chars.zip("uvwx".chars)
+        .select { |piece, loc| "uvwx"[piece]? }
+
+      # Find the "most solved" edge to use as our anchor.
+      solved.map { |a, b| b - a }.min? || 0
+    end
+
     def try_cross
       options = unsolved_edges.map { |a, b|
         Hecsa.cross_knowledge[a][b].as String
       }
 
-      if options.empty? || options.uniq.size != options.size
-        # TODO: Handle awkward cases more deterministically.
-        progress %w[F F2 F' B B2 B' R R2 R' L L2 L'].sample
-      else
-        progress options.sample
-      end
+      abort "stuck on cross" if options.empty?
+
+      # TODO: Determine best edge to solve.
+      progress options.sample
     end
 
     def unsolved_edges
-      # TODO: Get bad edges out of the bottom layer before starting.
-      bad = {"k" => "u", "o" => "v", "s" => "w", "g" => "x"}
-
       EDGES.map { |edge|
-        home = @cube.resolve_relative edge
-        {edge, home} if edge != home && "uvwx"[home]? && home != bad[edge]?
+        if "uvwx"[home = @cube.resolve_relative edge]?
+          home = misalign home
+          {edge.to_s, home.to_s} if edge != home
+        end
       }.compact
     end
 
