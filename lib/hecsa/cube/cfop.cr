@@ -5,6 +5,6 @@ class Hecsa::Cube
   end
 
   def f2l_pairs
-    %w[Ul Vj Wt Xr].count { |pair| pair == resolve_relative pair }
+    %w[Ul Vj Wt Xr].count &->solved?(String)
   end
 end

@@ -51,6 +51,14 @@ module Hecsa
       relative.unsolve resolve locations
     end
 
+    def solved?(locations)
+      locations == resolve_relative locations
+    end
+
+    def solved?
+      @state == SOLVED
+    end
+
     def exec1(move)
       @state = resolve MOVES[move]
       if rotation = ORIENTAL[move]?
