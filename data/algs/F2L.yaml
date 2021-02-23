@@ -1,16 +1,106 @@
-Dt:
-  Xr: R' U R U L U2 L' U L U' L'
-Jr:
-  Xr: U L U' L' U2 L U' L'
 An:
   Wt: U R' U R R2 F R F' R
-Jc:
-  Wt: R' U R U' R' U' R
-Ll:
-  Ul: L' U' L U L' U2 L U L' U' L
+Ca:
+  Vj: U R U2 R' U R U' R'
+Cb:
+  Vj: R U2 R' U' R U R'
+Cc:
+  Vj: U R U' R' U' R U' R' U R U' R'
+Cd:
+  Vj: R U' R' U2 R U R'
+Ce:
+  Vj: y' U' R' U2 R U' R' U R
+Ci:
+  Vj: y' R' U2 R U R' U' R
+Cj:
+  Vj: U' F R' F' R U' R U R'
+Cm:
+  Vj: F U R U' R' F' R U' R'
+Cp:
+  Vj: U' R' F R F' R U' R'
+Cq:
+  Vj: r U' r' U2 r U r'
 Db:
   Wt: R' U' R U' R' U R
+Dj:
+  Ul: R U R' U L' U' L U' L' U L
+Dt:
+  Xr: R' U R U L U2 L' U L U' L'
 Ir:
   Xr: L U2 L' U L U L'
+Ja:
+  Vj: U' R U R' U2 R U' R'
+Jb:
+  Vj: U R U' R'
+Jc:
+  Vj: R' D' R U' R' D R U R U' R'
+  Wt: R' U R U' R' U' R
+Jd:
+  Vj: U' R U2 R' U2 R U' R'
+Je:
+  Vj: F' U' F
+Ji:
+  Vj: y' U R' U R U' R' U' R
+Jj:
+  Vj: U' R U' R' U2 R U' R'
+Jm:
+  Vj: F R' F' R U' R U' R' U R U' R'
+  Wt: y' R U2 R2 U' R2 U' R'
+Jp:
+  Vj: U M' U R U' r' R U' R'
+Jq:
+  Vj: F R U R' U' F' R U' R'
+Jr:
+  Xr: U L U' L' U2 L U' L'
+Jt:
+  Ul: R' U2 R U L' U' L
+Kb:
+  Vj: R U' R' U R U' R'
+Ki:
+  Vj: R' F R F' R' F R F'
+Kj:
+  Vj: R U' R' U' R U R' U2 R U' R'
+Kp:
+  Vj: R U' R' F R U R' U' F' R U' R'
+Ll:
+  Ul: L' U' L U L' U2 L U L' U' L
+Ma:
+  Vj: R U R'
+Mb:
+  Vj: U' R U' R' U R U R'
+Mc:
+  Vj: R' U2 R2 U R2 U R
+Md:
+  Vj: U' R U R' U R U R'
+Me:
+  Vj: U' r U' R' U R U r'
+Mi:
+  Vj: F R' F' R
+Mj:
+  Vj: U R' D' R U' R' D R
+Mm:
+  Vj: R U' R' U2 y' R' U' R
+Mp:
+  Vj: U F' U' F U' R U R'
+Mq:
+  Vj: r' U2 R2 U R2 U r
+Nr:
+  Ul: U L U' L' U2 L' U' L
+Pb:
+  Vj: R U R' U' R U R'
+Pi:
+  Vj: R U R' U' F R' F' R
+Pj:
+  Vj: R U' R' U R U2 R' U R U' R'
+Pp:
+  Vj: R U' R' r U' r' U2 r U r'
+Tb:
+  Vj: R' U' R2 U R' U R U' R'
+Vb:
+  Vj: U' F' R U R' U' R' F R
 Vd:
   Wt: R U R' U2 R' U' R
+Vi:
+  Vj: R S' R' U R S R'
+Vp:
+  Vj: R U' R' d R' U2 R U2 R' U R
