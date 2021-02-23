@@ -93,10 +93,13 @@ module Hecsa
     end
 
     def try_f2l
-      Hecsa.f2l_knowledge.each do |from, (to, solution)|
-        next unless to == @cube.resolve_relative from
-        Solver.log "solving #{from} into #{to} (#{solution})"
-        return progress solution
+      Hecsa.f2l_knowledge.each do |from, algs|
+        algs.each do |to, alg|
+          next unless to == @cube.resolve_relative from
+
+          Solver.log "solving #{from} into #{to} (#{alg})"
+          return progress alg
+        end
       end
 
       nil
