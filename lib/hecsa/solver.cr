@@ -92,7 +92,7 @@ module Hecsa
         # changing the orientation can lead to stuckage, so we rotate first.
 
         progress %w[y y2 y'].sample
-        _, alg = SLOTS.find { |slot, _| !@cube.solved? slot }.not_nil!
+        _, alg = SLOTS.reject(->@cube.solved?(String)).sample
         progress alg.tr "_", ["", "2", "'"].sample
       end
     end
