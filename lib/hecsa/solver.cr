@@ -9,8 +9,8 @@ module Hecsa
     getter solution
 
     EDGES = 'a'..'x'
-    SLOTS = {"Ul" => "L' U' L", "Vj" => "R U R'",
-             "Wt" => "R' U R", "Xr" => "L U' L'"}
+    SLOTS = {"Ul" => "L' U_ L", "Vj" => "R U_ R'",
+             "Wt" => "R' U_ R", "Xr" => "L U_ L'"}
 
     def initialize(scramble)
       @cube = Cube.new.exec scramble
@@ -65,8 +65,6 @@ module Hecsa
         Hecsa.cross_knowledge[a][b].as String
       }
 
-      abort "stuck on cross" if options.empty?
-
       # TODO: Determine best edge to solve.
       progress options.sample
     end
@@ -87,8 +85,15 @@ module Hecsa
                   try_f2l
                 end
 
-        _, alg = SLOTS.find { |slot, _| slot != @cube.resolve_relative slot }.not_nil!
-        progress alg
+        # If we get here, no combination of angle and AUF results in finding
+        # the pieces of a pair that we know how to solve. This is usually due
+        # to pieces being mis-slotted and/or misoriented, so we just break
+        # up a random unsolved pair randomly and try again. Doing this without
+        # changing the orientation can lead to stuckage, so we rotate first.
+
+        progress %w[y y2 y'].sample
+        _, alg = SLOTS.find { |slot, _| !@cube.solved? slot }.not_nil!
+        progress alg.tr "_", ["", "2", "'"].sample
       end
     end
 
