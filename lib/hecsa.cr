@@ -5,6 +5,8 @@ module Hecsa
 
   class_getter cross_knowledge = {} of String => Algs
   class_getter f2l_knowledge = {} of String => Algs
+  class_property oll_knowledge = [] of String
+  class_property pll_knowledge = [] of String
 
   def self.teach_cross(from, to, alg)
     (cross_knowledge[from] ||= Algs.new)[to] = alg
@@ -17,3 +19,5 @@ end
 
 require "hecsa/knowledge/cross"
 require "hecsa/knowledge/f2l"
+require "hecsa/knowledge/oll"
+require "hecsa/knowledge/pll"

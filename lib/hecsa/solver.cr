@@ -5,7 +5,7 @@ require "hecsa/cube/draw"
 
 module Hecsa
   class Solver
-    property cube : Cube
+    getter cube : Cube
     getter solution
 
     EDGES = 'a'..'x'
@@ -16,8 +16,6 @@ module Hecsa
       @cube = Cube.new.exec scramble
       @solution = [] of String
       @misalignment = 0
-
-      Solver.log "Scramble: #{scramble}"
     end
 
     def progress(moves)
@@ -27,12 +25,9 @@ module Hecsa
 
     def cfop
       cross
-      Solver.log "solved cross", :success
-      @cube.draw
-
       f2l
-      Solver.log "solved F2L", :success
-      @cube.draw
+      oll
+      pll
     end
 
     def cross
@@ -108,6 +103,21 @@ module Hecsa
       end
 
       nil
+    end
+
+    def oll
+      id, auf = @cube.oll_case
+
+      progress %w[y y2 y'][auf - 1] if auf > 0
+      progress Hecsa.oll_knowledge[id]
+    end
+
+    def pll
+      id, auf = @cube.pll_case
+
+      progress %w[U U2 U'][auf - 1] if auf > 0
+      progress Hecsa.pll_knowledge[id]
+      progress %w[\  U U2 U'][auf] if auf = @cube.auf
     end
 
     def show
