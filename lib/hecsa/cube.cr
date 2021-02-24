@@ -68,7 +68,7 @@ module Hecsa
 
     def exec(moves)
       moves
-        .tr("'", "3")
+        .gsub("2'", '2').tr("'", "3")
         .gsub(/(\w)(\d)/) { "#{$1} " * $2.to_i }
         .split &->exec1(String)
 
