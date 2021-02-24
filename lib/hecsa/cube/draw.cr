@@ -8,7 +8,7 @@ class Hecsa::Cube
     map = {" " => " "}
 
     UFR.each_char do |c|
-      color = COLORS[SOLVED.index(resolve(c.to_s)).not_nil! // 9]
+      color = COLORS[face resolve c]
       map[c.to_s] = "\e[48;5;#{color}m \e[0m"
     end
 
@@ -20,7 +20,7 @@ class Hecsa::Cube
 
     File.each_line(MINI) do |line|
       rows << line.chars.map { |c|
-        c == ' ' ? 0 : COLORS[SOLVED.index(resolve(c.to_s)).not_nil! // 9]
+        c == ' ' ? 0 : COLORS[face resolve c]
       }
     end
 

@@ -74,6 +74,10 @@ module Hecsa
 
       self
     end
+
+    def face(facelet)
+      SOLVED.index(facelet).not_nil! // 9
+    end
   end
 
   class RelativeCube < Cube
