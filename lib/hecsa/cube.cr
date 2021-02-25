@@ -3,6 +3,7 @@ module Hecsa
   class Cube
     SOLVED = "AaBbCcDd1EeFfGgHh2IiJjKkLl3MmNnOoPp4QqRrSsTt5UuVvWwXx6"
 
+    getter history = [] of String
     property! relative : RelativeCube
 
     def initialize
@@ -32,6 +33,8 @@ module Hecsa
 
     def exec1(move)
       @state = resolve MOVES[move.tr "'3", "_"]
+      @history << move
+
       if rotation = ORIENTAL[move.tr "'", "_"]?
         relative.exec rotation
       end

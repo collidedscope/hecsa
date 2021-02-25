@@ -6,21 +6,22 @@ require "hecsa/cube/draw"
 module Hecsa
   class Solver
     getter cube : Cube
-    getter solution
 
     EDGES = 'a'..'x'
     SLOTS = {"Ul" => "L' U_ L", "Vj" => "R U_ R'",
              "Wt" => "R' U_ R", "Xr" => "L U_ L'"}
 
-    def initialize(scramble)
+    def initialize(@scramble : String)
       @cube = Cube.new.exec scramble
-      @solution = [] of String
       @misalignment = 0
     end
 
     def progress(moves)
-      @solution << moves
       @cube.exec moves
+    end
+
+    def solution
+      @cube.history[@scramble.split.size..]
     end
 
     def cfop
