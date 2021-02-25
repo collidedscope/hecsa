@@ -109,7 +109,7 @@ module Hecsa
     def oll
       id, auf = @cube.oll_case
 
-      progress %w[y y2 y'][auf - 1] if auf > 0
+      progress %w[U U2 U'][auf - 1] if auf > 0
       progress Hecsa.oll_knowledge[id]
     end
 
