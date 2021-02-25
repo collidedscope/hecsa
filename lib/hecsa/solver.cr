@@ -87,7 +87,7 @@ module Hecsa
         # up a random unsolved pair randomly and try again. Doing this without
         # changing the orientation can lead to stuckage, so we rotate first.
 
-        progress %w[y y2 y'].sample
+        progress %w[y y'].sample
         _, alg = SLOTS.reject(->@cube.solved?(String)).sample
         progress alg.tr "_", ["", "2", "'"].sample
       end
