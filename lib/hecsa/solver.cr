@@ -92,16 +92,15 @@ module Hecsa
     end
 
     def try_f2l
+      options = [] of String
+
       Hecsa.f2l_knowledge.each do |from, algs|
         algs.each do |to, alg|
-          next unless to == @cube.resolve_relative from
-
-          Solver.log "solving #{from} into #{to} (#{alg})"
-          return progress alg
+          options << alg if to == @cube.resolve_relative from
         end
       end
 
-      nil
+      progress options.min_by &.count ' ' unless options.empty?
     end
 
     def oll
