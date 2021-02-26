@@ -38,9 +38,7 @@ module Hecsa
         try_cross
       end
 
-      return if offset.zero?
-
-      progress %w[D D2 D'][offset - 1].not_nil!
+      progress %w[\  D D2 D'][offset]
     end
 
     def misalign(edge)
@@ -109,14 +107,14 @@ module Hecsa
     def oll
       id, auf = @cube.oll_case
 
-      progress %w[U U2 U'][auf - 1] if auf > 0
+      progress %w[\  U U2 U'][auf]
       progress Hecsa.oll_knowledge[id]
     end
 
     def pll
       id, auf = @cube.pll_case
 
-      progress %w[U U2 U'][auf - 1] if auf > 0
+      progress %w[\  U U2 U'][auf]
       progress Hecsa.pll_knowledge[id]
       progress %w[\  U U2 U'][auf] if auf = @cube.auf
     end
