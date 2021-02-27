@@ -104,14 +104,14 @@ module Hecsa
     end
 
     def oll
-      id, auf = @cube.oll_case
+      id, auf = @cube.oll_case.not_nil!
 
       progress %w[\  U U2 U'][auf]
       progress Hecsa.oll_knowledge[id]
     end
 
     def pll
-      id, auf = @cube.pll_case
+      id, auf = @cube.pll_case.not_nil!
 
       progress %w[\  U U2 U'][auf]
       progress Hecsa.pll_knowledge[id]

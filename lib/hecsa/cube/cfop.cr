@@ -22,7 +22,7 @@ class Hecsa::Cube
       id += 1 if face(resolve_relative facelet) == 0
     end
 
-    OLL_IDS.index(id).not_nil!.divmod 4
+    id.divmod 4 if id = OLL_IDS.index id
   end
 
   # TODO: Clean this up a lot.
@@ -46,7 +46,7 @@ class Hecsa::Cube
       end
     end
 
-    PLL_IDS.index(id).not_nil!.divmod 4
+    id.divmod 4 if id = PLL_IDS.index id
   end
 
   def auf
