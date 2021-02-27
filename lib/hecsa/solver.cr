@@ -133,7 +133,7 @@ module Hecsa
           next seq if !lost || seq.size == 1
           seq.sort.reverse.group_by(&.[0]).map { |face, moves|
             degree = moves.sum { |move| counts[move[1]?]? || 1 } % 4
-            "#{face}#{"  2'"[degree]}" if degree > 0
+            "#{face}#{"  2'"[degree]}".rstrip if degree > 0
           }.compact
         }
     end
