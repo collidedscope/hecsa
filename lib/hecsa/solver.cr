@@ -21,7 +21,7 @@ module Hecsa
     end
 
     def solution
-      @cube.history[@scramble.split.size..]
+      Solver.consolidate @cube.history[@scramble.split.size..]
     end
 
     def cfop
