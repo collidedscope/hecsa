@@ -131,7 +131,7 @@ module Hecsa
         .chunks { |c| c[0] == 'U' || c[0] == 'y' }
         .flat_map { |lost, seq|
           next seq if !lost || seq.size == 1
-          seq.group_by(&.[0]).map { |face, moves|
+          seq.sort.reverse.group_by(&.[0]).map { |face, moves|
             degree = moves.sum { |move| counts[move[1]?]? || 1 } % 4
             "#{face}#{"  2'"[degree]}" if degree > 0
           }.compact
