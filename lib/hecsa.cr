@@ -1,5 +1,3 @@
-require "hecsa/solver"
-
 module Hecsa
   alias Algs = Hash(String, String)
 
@@ -16,8 +14,3 @@ module Hecsa
     (f2l_knowledge[from] ||= Algs.new)[to] = alg
   end
 end
-
-require "hecsa/knowledge/cross"
-require "hecsa/knowledge/f2l"
-require "hecsa/knowledge/oll"
-require "hecsa/knowledge/pll"
