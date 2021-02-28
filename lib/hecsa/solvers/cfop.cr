@@ -133,8 +133,27 @@ module Hecsa
     end
 
     def show
-      p solution
-      @cube.draw_mini
+      fresh = Cube.new.exec @scramble
+      moves = solution
+
+      puts take_moves_until(moves) { |m|
+        fresh.exec1 m
+        fresh.cross_solved? == 0
+      }.join(' ') + " // cross"
+
+      4.times do |i|
+        puts take_moves_until(moves) { |m|
+          fresh.exec1 m
+          fresh.cross_solved? && fresh.f2l_pairs > i
+        }.join(' ') + " // F2L #{i + 1}"
+      end
+
+      puts take_moves_until(moves) { |m|
+        fresh.exec1 m
+        fresh.f2l_pairs == 4 && fresh.pll_case
+      }.join(' ') + " // OLL"
+
+      puts moves.join(' ') + " // PLL"
     end
   end
 end
