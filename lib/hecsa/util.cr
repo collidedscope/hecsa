@@ -1,3 +1,5 @@
+require "colorize"
+
 module Hecsa::Util
   def self.consolidate(moves)
     counts = {'\'' => -1, '2' => 2, '3' => 3}
