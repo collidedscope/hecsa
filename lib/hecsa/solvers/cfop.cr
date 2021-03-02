@@ -1,6 +1,7 @@
 require "hecsa"
 require "hecsa/cube"
 require "hecsa/cube/cfop"
+require "hecsa/cube/draw"
 require "hecsa/knowledge/cross"
 require "hecsa/knowledge/f2l"
 require "hecsa/knowledge/oll"
@@ -134,6 +135,7 @@ module Hecsa
 
     def show
       fresh = Cube.new.exec @scramble
+      fresh.draw_mini
       moves = solution
 
       puts take_moves_until(moves) { |m|
