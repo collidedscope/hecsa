@@ -1,3 +1,5 @@
+require "hecsa/util"
+
 module Hecsa
   # Representation of a Rubik's Cube that uses Speffz notation for everything.
   class Cube
@@ -41,8 +43,16 @@ module Hecsa
     end
 
     def exec(moves)
-      moves.split &->exec1(String)
+      moves.each &->exec1(String)
       self
+    end
+
+    def exec(moves : String)
+      exec moves.split
+    end
+
+    def undo(moves)
+      exec Util.invert moves
     end
 
     def face(facelet)
