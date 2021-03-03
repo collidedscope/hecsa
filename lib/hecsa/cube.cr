@@ -51,6 +51,12 @@ module Hecsa
       exec moves.split
     end
 
+    def exec(moves)
+      exec moves
+      yield
+      undo moves
+    end
+
     def undo(moves)
       exec Util.invert moves
     end
