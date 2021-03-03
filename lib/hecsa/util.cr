@@ -1,6 +1,14 @@
 require "colorize"
 
 module Hecsa::Util
+  def self.invert(moves)
+    moves.split.reverse.map { |move|
+      counts = {'\'' => 3, '2' => 2, '3' => 3}
+      degree = 4 - (counts[move[1]?]? || 1)
+      "#{move[0]}#{"  2'"[degree]}".rstrip
+    }
+  end
+
   def self.consolidate(moves)
     counts = {'\'' => -1, '2' => 2, '3' => 3}
 
