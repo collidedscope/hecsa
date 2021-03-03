@@ -40,7 +40,7 @@ h:
   x: E L
 i:
   u: U L F' L' # setup to e
-  v: F R F'
+  v: F R' F'
   w: U L' B L # setup to e
   x: F' L F
 j:
@@ -89,7 +89,7 @@ r:
   w: E' B'
   x: L'
 s:
-  u: B E F'
+  u: B' E F'
   v: B R
   w: B E B
   x: B' L'

@@ -1,8 +1,8 @@
 An:
   Wt: U R' U R' F R F' R
-Bi:
+Bc:
   Wt: U' R' U2 R U' R' U R
-Bm:
+Bb:
   Wt: R' U2 R U R' U' R
 Ca:
   Vj: U R U2 R' U R U' R'
@@ -87,7 +87,7 @@ Mp:
   Vj: U F' U' F U' R U R'
 Mq:
   Vj: r' U2 R2 U R2 U r
-Nm:
+Nb:
   Wt: U R' U R U' R' U' R
 Na:
   Wt: R U2 R2 U' R2 U' R'
@@ -107,6 +107,7 @@ Vd:
   Wt: R U R' U2 R' U' R
 Vi:
   Vj: R S' R' U R S R'
+Vj:
+  Wt: R U' R' d R' U2 R U2 R' U R
 Vp:
   Vj: R2 U2 F R2 F' U2 R' U R'
-  Wt: R U' R' d R' U2 R U2 R' U R
