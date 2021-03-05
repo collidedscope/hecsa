@@ -30,12 +30,21 @@ Dj:
   Ul: R U R' U L' U' L U' L' U L
 Dt:
   Xr: R' U R U L U2 L' U L U' L'
+Ea:
+  Wt: R' U R
+Ec:
+  Xr: L U L'
+Fc:
+  Vj: R U' R'
+Id:
+  Wt: R' U2 R
 Ir:
   Xr: L U2 L' U L U L'
 Ja:
   Vj: U' R U R' U2 R U' R'
 Jb:
   Vj: U R U' R'
+  Xr: L U2 L'
 Jc:
   Vj: R' D' R U' R' D R U R U' R'
   Wt: R' U R U' R' U' R
@@ -72,6 +81,7 @@ Ma:
 Mb:
   Vj: U' R U' R' U R U R'
 Mc:
+  Ul: L' U L
   Vj: R' U2 R2 U R2 U R
 Md:
   Vj: U' R U R' U R U R'
@@ -87,10 +97,13 @@ Mp:
   Vj: U F' U' F U' R U R'
 Mq:
   Vj: r' U2 R2 U R2 U r
-Nb:
-  Wt: U R' U R U' R' U' R
 Na:
   Wt: R U2 R2 U' R2 U' R'
+  Xr: L U' L'
+Nb:
+  Wt: U R' U R U' R' U' R
+Nc:
+  Wt: R' U' R
 Nr:
   Ul: U L U' L' U2 L' U' L
 Pb:
@@ -101,6 +114,10 @@ Pj:
   Vj: R U' R' U R U2 R' U R U' R'
 Pp:
   Vj: R U' R' r U' r' U2 r U r'
+Qb:
+  Ul: L' U2 L
+Rd:
+  Vj: R U2 R'
 Vb:
   Vj: U' F' R U R' U' R' F R
 Vd:
