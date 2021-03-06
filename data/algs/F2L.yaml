@@ -20,6 +20,7 @@ Cj:
   Vj: U' F R' F' R U' R U R'
 Cm:
   Vj: F U R U' R' F' R U' R'
+  Xr: r U R' U R U2 B r'
 Cp:
   Vj: U' R' F R F' R U' R'
 Cq:
@@ -36,6 +37,8 @@ Ec:
   Xr: L U L'
 Fc:
   Vj: R U' R'
+Fr:
+  Ul: L U L2 U' L
 Id:
   Wt: R' U2 R
 Ir:
@@ -97,6 +100,8 @@ Mp:
   Vj: U F' U' F U' R U R'
 Mq:
   Vj: r' U2 R2 U R2 U r
+Mt:
+  Ul: R' U R L' U L
 Na:
   Wt: R U2 R2 U' R2 U' R'
   Xr: L U' L'
