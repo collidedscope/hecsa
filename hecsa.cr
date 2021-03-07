@@ -16,7 +16,9 @@ def shortest_solution(scramble)
   }.min_by &.solution.size
 end
 
-print "Scramble: "
-if scramble = gets
-  shortest_solution(scramble).show
+unless scramble = ARGV[0]?
+  print "Scramble: "
+  scramble = gets.not_nil!
 end
+
+shortest_solution(scramble).show
