@@ -16,6 +16,7 @@ module Hecsa
     EDGES = 'a'..'x'
     SLOTS = {"Ul" => "L' U_ L", "Vj" => "R U_ R'",
              "Wt" => "R' U_ R", "Xr" => "L U_ L'"}
+    PLL_NAMES = %w[Aa Ab E F Ga Gb Gc Gd H Ja Jb Na Nb Ra Rb T Ua Ub V Y Z]
 
     def initialize(@scramble : String)
       @cube = Cube.new.exec @scramble
@@ -150,12 +151,14 @@ module Hecsa
         }.join(' ') + " // F2L #{i + 1}"
       end
 
+      oll = fresh.oll_case.not_nil![0]
       puts take_moves_until(moves) { |m|
         fresh.exec1 m
         fresh.f2l_pairs == 4 && fresh.pll_case
-      }.join(' ') + " // OLL"
+      }.join(' ') + " // OLL #{oll}"
 
-      puts moves.join(' ') + " // PLL"
+      pll = fresh.pll_case.not_nil![0]
+      puts moves.join(' ') + " // #{PLL_NAMES[pll - 1]}-perm"
     end
   end
 end
