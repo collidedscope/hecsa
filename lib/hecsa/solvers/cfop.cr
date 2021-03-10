@@ -139,6 +139,10 @@ module Hecsa
       fresh.draw_mini
       moves = solution
 
+      insp = moves.shift moves.index { |m| !"xyz"[m[0]]? }.not_nil!
+      fresh.exec insp
+      puts "#{insp.join ' '} // inspection"
+
       puts take_moves_until(moves) { |m|
         fresh.exec1 m
         fresh.cross_solved? == 0
