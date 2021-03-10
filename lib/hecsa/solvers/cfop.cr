@@ -14,6 +14,7 @@ module Hecsa
     getter cube : Cube
 
     EDGES = 'a'..'x'
+    FACES = %w[white orange green red blue yellow]
     SLOTS = {"Ul" => "L' U_ L", "Vj" => "R U_ R'",
              "Wt" => "R' U_ R", "Xr" => "L U_ L'"}
     PLL_NAMES = %w[Aa Ab E F Ga Gb Gc Gd H Ja Jb Na Nb Ra Rb T Ua Ub V Y Z]
@@ -143,10 +144,11 @@ module Hecsa
       fresh.exec insp
       puts "#{insp.join ' '} // inspection"
 
+      cross = fresh.resolve('6').to_i - 1
       puts take_moves_until(moves) { |m|
         fresh.exec1 m
         fresh.cross_solved? == 0
-      }.join(' ') + " // cross"
+      }.join(' ') + " // #{FACES[cross]} cross"
 
       4.times do |i|
         puts take_moves_until(moves) { |m|
