@@ -158,21 +158,15 @@ module Hecsa
       end
 
       oll = fresh.oll_case.not_nil![0]
-      if oll == 0
-        puts "// OLL skip"
-      else
-        puts take_moves_until(moves) { |m|
-          fresh.exec1 m
-          fresh.f2l_pairs == 4 && fresh.pll_case
-        }.join(' ') + " // OLL #{oll}"
-      end
+      oll = "skip" if oll == 0
+      puts take_moves_until(moves) { |m|
+        fresh.exec1 m
+        fresh.f2l_pairs == 4 && fresh.pll_case
+      }.join(' ') + " // OLL #{oll}"
 
       pll = fresh.pll_case.not_nil![0]
-      if pll == 0
-        puts "// PLL skip"
-      else
-        puts moves.join(' ') + " // #{PLL_NAMES[pll - 1]}-perm"
-      end
+      pll = pll == 0 ? " // PLL skip" : " // #{PLL_NAMES[pll - 1]}-perm"
+      puts moves.join(' ') + pll
     end
   end
 end
