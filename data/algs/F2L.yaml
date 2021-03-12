@@ -37,6 +37,8 @@ Ec:
   Xr: L U L'
 Fc:
   Vj: R U' R'
+Fi:
+  Wt: R2 F R F' R
 Fr:
   Ul: L U L2 U' L
 Id:
@@ -92,6 +94,7 @@ Me:
   Vj: U' r U' R' U R U r'
 Mi:
   Vj: F R' F' R
+  Xr: L2 F' L' F L'
 Mj:
   Vj: U R' D' R U' R' D R
 Mm:
