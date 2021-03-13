@@ -114,6 +114,8 @@ Nc:
   Wt: R' U' R
 Nr:
   Ul: U L U' L' U2 L' U' L
+Oq:
+  Wt: R' U2 R' F R F' R
 Pb:
   Vj: R U R' U' R U R'
 Pi:
