@@ -134,6 +134,8 @@ Rd:
   Vj: R U2 R'
 Ub:
   Xr: L' U L U2 L U' L'
+Ul:
+  Wt: L' R' U2 R L
 Vb:
   Vj: U' F' R U R' U' R' F R
 Vd:
@@ -142,5 +144,10 @@ Vi:
   Vj: R S' R' U R S R'
 Vj:
   Wt: R U' R' d R' U2 R U2 R' U R
+  Xr: R L U2 L' R'
 Vp:
   Vj: R2 U2 F R2 F' U2 R' U R'
+Wt:
+  Ul: R' L' U2 L R
+Xr:
+  Vj: L R U2 R' L'
