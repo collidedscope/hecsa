@@ -37,4 +37,12 @@ describe Hecsa do
       c.exec alg
     end
   end
+
+  it "should solve M2 edges" do
+    Hecsa.m2_knowledge.each do |from, algs|
+      algs.each do |to, alg|
+        c.exec(alg) { c.resolve(to).should eq from }
+      end
+    end
+  end
 end
