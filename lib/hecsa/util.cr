@@ -9,6 +9,12 @@ module Hecsa::Util
     }
   end
 
+  def self.expand(moves)
+    moves.gsub(/\[(.+?)\s*(:|,)\s*(.+?)\]/) {
+      "#{$1} #{$3} #{invert($1).join ' '} #{invert($3).join ' ' if $2 == ","}"
+    }
+  end
+
   def self.consolidate(moves)
     counts = {'\'' => -1, '2' => 2, '3' => 3}
 

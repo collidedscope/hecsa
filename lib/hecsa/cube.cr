@@ -48,7 +48,7 @@ module Hecsa
     end
 
     def exec(moves : String)
-      exec moves.split
+      exec Util.expand(moves).split
     end
 
     def exec(moves)
