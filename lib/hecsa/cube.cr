@@ -58,7 +58,7 @@ module Hecsa
     end
 
     def undo(moves)
-      exec Util.invert moves
+      exec Util.invert Util.expand moves
     end
 
     def face(facelet)
