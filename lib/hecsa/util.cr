@@ -1,7 +1,9 @@
 require "colorize"
 
 module Hecsa::Util
-  def self.invert(moves)
+  extend self
+
+  def invert(moves)
     moves.split.reverse.map { |move|
       counts = {'\'' => 3, '2' => 2, '3' => 3}
       degree = 4 - (counts[move[1]?]? || 1)
@@ -9,13 +11,13 @@ module Hecsa::Util
     }
   end
 
-  def self.expand(moves)
+  def expand(moves)
     moves.gsub(/\[(.+?)\s*(:|,)\s*(.+?)\]/) {
       "#{$1} #{$3} #{invert($1).join ' '} #{invert($3).join ' ' if $2 == ","}"
     }.gsub(/\((.+?)\)(\d+)/) { "#{$1} " * $2.to_i }
   end
 
-  def self.consolidate(moves)
+  def consolidate(moves)
     counts = {'\'' => -1, '2' => 2, '3' => 3}
 
     moves
@@ -29,7 +31,7 @@ module Hecsa::Util
       }
   end
 
-  def self.log(msg, kind = nil, io = STDERR)
+  def log(msg, kind = nil, io = STDERR)
     io.puts case kind
     when :success
       msg.colorize :green
